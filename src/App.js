@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useState, useEffect, useLayoutEffect } from "react";
+import React, { useReducer, useRef, useState, useEffect } from "react";
 import { listReducer } from "./listReducer";
 import { v4 as uuidv4 } from "uuid";
 import {
@@ -111,7 +111,7 @@ function App() {
                 </Element>
               );
             });
-          }
+          } else return;
         })}
       </TasksContainer>
     </AppContainer>
