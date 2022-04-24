@@ -5,7 +5,7 @@ export const listReducer = (state, {type, name, listId, id, stateString}) => {
         case "add-list":
             return [...state, {name: name, id: listId, tasks: []}]
         case "remove-list":
-            return [...state].filter(list => {if(list.id !== listId) return list})
+            return [...state].filter(list => list.id !== listId)
         case "add-task":
             return [...state].map(list => {
                 if(list.id === listId){
@@ -16,9 +16,7 @@ export const listReducer = (state, {type, name, listId, id, stateString}) => {
             return [...state].map(list => {
                 if(list.id === listId){
                     return {...list, tasks: [...list.tasks.filter(task => {
-                        if(task.id !== id){
-                            return task
-                        }
+                        return task.id !== id
                     })]}
                 } else return list
             })
