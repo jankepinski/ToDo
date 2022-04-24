@@ -111,7 +111,7 @@ function App() {
                 </Element>
               );
             });
-          } else return;
+          }
         })}
       </TasksContainer>
     </AppContainer>
